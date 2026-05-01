@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-exporter
+  namespace: expense-app
+  labels:
+    app: mysql-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-exporter
+  template:
+    metadata:
+      labels:
+        app: mysql-exporter
+    spec:
+      containers:
+      - name: mysql-exporter
+        image: prom/mysqld-exporter
+        args:
+          - "--config.my-cnf=/etc/mysql/.my.cnf"
+        ports:
+        - name: metrics
+          containerPort: 9104
+        volumeMounts:
+        - name: mysql-config
+          mountPath: /etc/mysql/.my.cnf
+          subPath: .my.cnf
+      volumes:
+      - name: mysql-config
+        secret:
+          secretName: mysql-exporter-secret
