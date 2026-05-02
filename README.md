@@ -164,3 +164,13 @@ kubectl apply -f mysql-servicemonitor.yaml
 ![mysql-service-monitor]
 ![mysql-metrics-prometheus](images/mysql-metrics-prometheus.png)
 ![mysql-metrics-grafana](images/mysql-exporter-grafana.png)
+
+
+### Grafana Dashboard for Expense-App
+
+![dashboard-part-1](images/expense-grafana-dashboard-1.png)
+![dashboard-part-2](images/expense-grafana-dashboard-2.png)
+![dashboard-part-3](images/expense-grafana-dashboard-3.png)
+![dashboard-part-4](images/expense-grafana-dashboard-4.png)
+![dashboard-part-5](images/expense-grafana-dashboard-5.png)
+![dashboard-part-6](images/expense-grafana-dashboard-6.png)
